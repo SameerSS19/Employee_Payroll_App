@@ -48,3 +48,9 @@ const remove = (node) => {
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
     createInnerHtml();
 }
+const update=(node)=>{
+    let empPayrollData=employeePayrollList.find(empData => empData._name==node.id);
+    if(!empPayrollData) return;
+    localStorage.setItem('editEmp' , JSON.stringify(empPayrollData));
+    window.location.replace(site_properties.add_emp_payroll_page);
+}
